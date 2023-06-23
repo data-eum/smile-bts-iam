@@ -71,6 +71,9 @@ export type BundleForm = {
 };
 
 const localeToDisplayName = (locale: string) => {
+  if (locale === "ru") {
+    return "korean";
+  }  
   try {
     return new Intl.DisplayNames([locale], { type: "language" }).of(locale);
   } catch (error) {

@@ -1,1 +1,7 @@
-{}
+{
+	"helpToggleInfo": "이 토글은 UI에서 도움말 정보의 일부를 활성화/비활성화합니다.모든 도움말 텍스트, 링크 및 팝오버가 포함됩니다.",
+	"showPassword": "암호 필드를 일반 텍스트로 표시",
+	"helpFileUpload": "JSON 파일 업로드",
+	"helpFileUploadClient": "JSON 또는 XML 파일 업로드",
+	"dragHelp": "스페이스 키 또는 Enter 키를 눌러 드래그를 시작하고 화살표 키를 사용하여 위 또는 아래로 이동합니다.Enter를 눌러 드래그를 확인하거나 다른 키를 눌러 드래그 작업을 취소합니다."
+}

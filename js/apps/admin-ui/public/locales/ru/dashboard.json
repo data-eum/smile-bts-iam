@@ -1,4 +1,26 @@
 {
-  "serverInfo": "Информация о сервере",
-  "disabledFeatures": "Отключенные функции сервера"
+	"realmName": "{{이름}} 영역",
+	"welcome": "에 오신 것을 환영합니다",
+	"introduction": "이 페이지를 떠나 이 영역을 관리하려면 왼쪽 탐색 표시줄에서 해당 메뉴 항목을 클릭하십시오.",
+	"serverInfo": "서버 정보",
+	"version": "버전",
+	"product": "제품",
+	"profile": "프로필",
+	"enabledFeatures": "활성화된 기능",
+	"experimental": "실험적",
+	"preview": "시사",
+	"supported": "지원됨",
+	"infoEnabledFeatures": "활성화된 미리 보기 및 실험 기능을 표시합니다.",
+	"infoDisabledFeatures": "비활성화된 모든 기능을 표시합니다.",
+	"disabledFeatures": "장애인 기능",
+	"providerInfo": "제공업체 정보",
+	"providers": "제공자",
+	"realmInfo": "영역 정보",
+	"spi": "PI",
+	"showMore": "더 보기",
+	"showLess": "적게 보기",
+	"memory": "메모리",
+	"totalMemory": "총 메모리",
+	"freeMemory": "여유 메모리",
+	"usedMemory": "중고 메모리"
 }

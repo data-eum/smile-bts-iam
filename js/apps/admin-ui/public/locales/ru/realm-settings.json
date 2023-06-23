@@ -1,115 +1,901 @@
 {
-  "partialImport": "Частичный импорт",
-  "general": "Главная",
-  "login": "вход",
-  "themes": "Темы",
-  "events": "События",
-  "eventListeners": "Слушатели событий",
-  "eventListenersHelpText": "Настройка слушателей, получающих события для realm.",
-  "adminEventsSettings": "Настройки событий администратора",
-  "saveEvents": "Сохранять события",
-  "expiration": "Истечение",
-  "clearAdminEvents": "Очистить события администратора",
-  "includeRepresentation": "Включить представление",
-  "email": "E-mail",
-  "from": "От",
-  "host": "Сервер",
-  "port": "Порт",
-  "authentication": "Аутентификация",
-  "enableSSL": "Включить SSL",
-  "enableStartTLS": "Включить StartTLS",
-  "username": "Имя пользователя",
-  "password": "Пароль",
-  "keys": "Ключи",
-  "keystore": "Хранилище ключей",
-  "keyAlias": "Синоним ключа",
-  "keyPassword": "Пароль для ключа",
-  "providers": "Поставщики",
-  "uiDisplayName": "Наименование в консоли",
-  "active": "Активные",
-  "type": "Тип",
-  "providerId": "ID",
-  "kid": "KID",
-  "provider": "Поставщик",
-  "publicKeys": "Публичные ключи",
-  "certificate": "Сертификат",
-  "userRegistration": "Самостоятельная регистрация пользователей",
-  "userRegistrationHelpText": "Включить/выключить страницу регистрации. Ссылка для регистрации будет также показана на странице входа.",
-  "rememberMe": "Запомнить меня",
-  "rememberMeHelpText": "Показать чекбокс на странице входа, чтобы разрешить пользователю запомнить вход в учетную запись в случае если браузерная сессия устареет.",
-  "emailAsUsername": "E-mail как имя пользователя",
-  "loginWithEmail": "Вход по E-mail",
-  "loginWithEmailHelpText": "Разрешает пользователям входить с помощью E-mail.",
-  "duplicateEmails": "Дублирующиеся E-mail",
-  "duplicateEmailsHelpText": "Разрешает разным пользователям иметь один и тот же E-mail. Изменение этой настройки также очистит пользовательский кэш. После выключения поддержки дублирующихся email рекомендуется вручную почистить в базе данных ограничения по E-mail существующим пользователям.",
-  "verifyEmail": "Подтверждение E-mail",
-  "editUsername": "Редактируемое имя пользователя",
-  "testConnection": "Тест соединения",
-  "htmlDisplayName": "Отображаемое название в HTML",
-  "requireSsl": "Требует SSL",
-  "sslType": {
-    "all": "все запросы",
-    "external": "внешние запросы",
-    "none": "нет"
-  },
-  "endpoints": "Конечные точки",
-  "loginTheme": "Тема страницы входа",
-  "accountTheme": "Тема учетной записи",
-  "adminTheme": "Тема консоли администратора",
-  "emailTheme": "Тема для E-mail",
-  "sessions": "Сессии",
-  "SSOSessionIdle": "Таймаут сессии SSO",
-  "SSOSessionMax": "Ограничение сессии SSO",
-  "offlineSessionIdle": "Таймаут оффлайн сессии",
-  "loginTimeout": "Таймаут входа",
-  "loginActionTimeout": "Таймаут действий по входу",
-  "revokeRefreshToken": "Одноразовые токены обновления",
-  "accessTokenLifespan": "Продолжительность жизни токена доступа",
-  "accessTokenLifespanImplicitFlow": "Продолжительность жизни токена доступа для Implicit Flow",
-  "clientLoginTimeout": "Таймаут авторизации клиента",
-  "createPolicy": "Создать политику",
-  "policies": "Политики",
-  "clientProfileDescription": "Описание",
-  "back": "Назад",
-  "save": "Сохранить",
-  "tokens": "Токены",
-  "attributes": "Атрибуты",
-  "status": "Статус",
-  "supportedLocales": "Поддерживаемые языки",
-  "defaultLocale": "Язык по умолчанию",
-  "user": "Пользователь",
-  "validatorDialogColNames": {
-    "colName": "Наименование роли"
-  },
-  "validatorColNames": {
-    "colConfig": "Конфигурация"
-  },
-  "eventTypes": {
-    "IMPERSONATE": {
-      "name": "Имперсонировать"
-    },
-    "LOGOUT": {
-      "name": "Выход"
-    },
-    "REGISTER": {
-      "name": "Регистрация"
-    },
-    "RESET_PASSWORD": {
-      "name": "Сброс пароля"
-    }
-  },
-  "deleteEvents": "Очистить события",
-  "defaultRoles": "Роли по умолчанию",
-  "defaultGroups": "Группы по умолчанию",
-  "securityDefences": "Защита безопасности",
-  "headers": "Заголовки",
-  "bruteForceDetection": "Определение Brute Force",
-  "xFrameOptions": "X-Frame-Options",
-  "contentSecurityPolicy": "Content-Security-Policy",
-  "xContentTypeOptions": "X-Content-Type-Options",
-  "failureFactor": "Максимальное количество неудачных попыток входа",
-  "waitIncrementSeconds": "Порог ожидания",
-  "maxFailureWaitSeconds": "Максимальное ожидание",
-  "maxDeltaTimeSeconds": "Время сброса неудачных попыток",
-  "minimumQuickLoginWaitSeconds": "Минимальное ожидание быстрого входа"
+	"createGroupText": "속성 그룹 생성",
+	"editGroupText": "속성 그룹 편집",
+	"tableTitle": "속성 그룹",
+	"columnName": "이름",
+	"columnDisplayName": "디스플레이 이름",
+	"columnDisplayDescription": "디스플레이 설명",
+	"emptyStateMessage": "속성 그룹 없음",
+	"emptyStateInstructions": "속성 그룹을 추가하려면 아래 버튼을 클릭하십시오.",
+	"deleteDialogTitle": "속성 그룹을 삭제하시겠습니까?",
+	"deleteDialogDescription": "속성 그룹 <1>{{group}}</1> 을 (를) 영구적으로 삭제하시겠습니까?",
+	"deleteSuccess": "속성 그룹이 삭제되었습니다.",
+	"deleteAttributeGroupError": "사용자 속성 그룹을 삭제할 수 없습니다: {{error}}",
+	"nameField": "이름",
+	"nameHint": "그룹의 고유한 이름.이 이름은 속성을 그룹에 바인딩할 때 그룹을 참조하는 데 사용됩니다.",
+	"displayHeaderField": "디스플레이 이름",
+	"displayHeaderHint": "사용자 대면 양식에서 속성 그룹을 렌더링할 때 사용해야 하는 사용자 친화적인 그룹 이름입니다.현지화된 값에 대한 키도 지원합니다.예: $ {프로필.속성.그룹.주소}",
+	"displayDescriptionField": "디스플레이 설명",
+	"displayDescriptionHint": "사용자 대면 양식을 렌더링할 때 툴팁으로 사용해야 하는 텍스트입니다.",
+	"annotationsText": "주석",
+	"removeAnnotationText": "주석 제거",
+	"keyPlaceholder": "키 입력",
+	"keyLabel": "키",
+	"valuePlaceholder": "값 입력",
+	"valueLabel": "가치",
+	"realmSettingsExplain": "영역 설정은 현재 영역의 사용자, 응용 프로그램, 역할 및 그룹에 대한 옵션을 제어하는 설정입니다.",
+	"partialImport": "부분 가져오기",
+	"partialExport": "부분 내보내기",
+	"deleteRealm": "영역 삭제",
+	"deleteConfirmTitle": "영역을 삭제하시겠습니까?",
+	"dragInstruction": "클릭하고 드래그하여 우선 순위를 변경합니다.",
+	"deleteConfirm": "이 영역을 삭제하면 모든 관련 데이터가 제거됩니다.",
+	"deleteProviderTitle": "키 제공자를 삭제하시겠습니까?",
+	"deleteProviderConfirm": "키 제공자 {{provider}} 를 영구적으로 삭제하시겠습니까?",
+	"deleteProviderSuccess": "성공.제공자가 삭제되었습니다.",
+	"deleteProviderError": "제공자를 삭제하는 중 오류 발생",
+	"deletedSuccess": "영역이 삭제되었습니다",
+	"deleteError": "영역을 삭제할 수 없습니다: {{error}}",
+	"deleteConditionSuccess": "상태가 삭제되었습니다.",
+	"disableConfirmTitle": "렐름을 비활성화하시겠습니까?",
+	"disableConfirm": "비활성화된 경우 사용자와 클라이언트는 영역에 액세스할 수 없습니다.정말 계속하시겠습니까?",
+	"disablePolicyConfirmTitle": "정책을 사용하지 않도록 설정하시겠습니까?",
+	"disablePolicyConfirm": "정책을 사용하지 않도록 설정하면 사용자와 클라이언트가 정책에 액세스할 수 없습니다.정말 계속하시겠습니까?",
+	"editProvider": "제공자 편집",
+	"editableRowsTable": "편집 가능한 행 테이블",
+	"saveSuccess": "Realm이 성공적으로 업데이트되었습니다.",
+	"saveProviderSuccess": "공급자가 성공적으로 저장되었습니다.",
+	"saveProviderListSuccess": "제공자의 우선 순위가 성공적으로 업데이트되었습니다.",
+	"saveProviderError": "공급자 저장 오류: {{error}}",
+	"saveError": "영역을 업데이트할 수 없습니다: {{error}}",
+	"general": "일반",
+	"login": "로그인",
+	"themes": "테마",
+	"events": "이벤트",
+	"eventListeners": "이벤트 리스너",
+	"eventListenersHelpText": "영역에 대해 어떤 리스너가 이벤트를 수신할지 설정합니다.",
+	"saveEventListeners": "이벤트 리스너 저장",
+	"saveEventListenersSuccess": "이벤트 리스너가 업데이트되었습니다.",
+	"saveEventListenersError": "이벤트 리스너 저장 중 오류: {{error}}",
+	"userEventsSettings": "사용자 이벤트 설정",
+	"adminEventsSettings": "관리자 이벤트 설정",
+	"saveEvents": "이벤트 저장",
+	"expiration": "만료",
+	"clearUserEvents": "사용자 이벤트 지우기",
+	"clearAdminEvents": "관리자 이벤트 지우기",
+	"includeRepresentation": "대표성 포함",
+	"email": "이메일",
+	"template": "템플리트",
+	"connectionAndAuthentication": "연결 및 인증",
+	"from": "보낸 사람",
+	"fromDisplayName": "디스플레이 이름에서",
+	"replyTo": "에 답글 달기",
+	"replyToDisplayName": "표시 이름에 답글 달기",
+	"envelopeFrom": "봉투 출처",
+	"host": "호스트",
+	"port": "포트",
+	"encryption": "암호화",
+	"authentication": "인증",
+	"enableSSL": "SSL 활성화",
+	"enableStartTLS": "시작 TTLS 활성화",
+	"username": "사용자명",
+	"password": "패스워드",
+	"keys": "키",
+	"keysList": "키 목록",
+	"searchKey": "검색 키",
+	"keystore": "키스토어",
+	"keystorePassword": "키스토어 비밀번호",
+	"keyAlias": "키 별칭",
+	"keyPassword": "키 비밀번호",
+	"providers": "제공자",
+	"algorithm": "알고리즘",
+	"use": "용도",
+	"aesGenerated": "에이스 제너레이티드",
+	"ecdsaGenerated": "ecdsca 생성",
+	"hmacGenerated": "hmac에서 생성됨",
+	"javaKeystore": "자바 키스토어",
+	"rsa": "rsa",
+	"rsaGenerated": "원시 생성",
+	"uiDisplayName": "UI 디스플레이 이름",
+	"AESKeySize": "AES 키 사이즈",
+	"active": "액티브",
+	"privateRSAKey": "전용 RSA 키",
+	"filenamePlaceholder": "PEM 파일을 업로드하거나 아래에 키를 붙여넣습니다.",
+	"x509Certificate": "X509 인증서",
+	"ellipticCurve": "타원 곡선",
+	"secretSize": "시크릿 사이즈",
+	"keySize": "키 사이즈",
+	"type": "타입",
+	"name": "이름",
+	"providerId": "신분증",
+	"kid": "키드",
+	"provider": "제공자",
+	"providerDescription": "제공자 설명",
+	"addProvider": "제공자 추가",
+	"publicKeys": "퍼블릭 키",
+	"keysFilter": {
+		"ACTIVE": "액티브 키",
+		"PASSIVE": "패시브 키",
+		"DISABLED": "비활성화된 키"
+	},
+	"noKeys": "열쇠 없음",
+	"noKeysDescription": "활성 키를 생성하지 않았습니다",
+	"certificate": "인증서",
+	"userRegistration": "사용자 등록",
+	"loginScreenCustomization": "로그인 화면 사용자 지정",
+	"registrationAllowed": "사용자 등록",
+	"userRegistrationHelpText": "등록 페이지를 활성화/비활성화합니다.등록 링크는 로그인 페이지에도 표시됩니다.",
+	"resetPasswordAllowed": "비밀번호를 잊어버리셨나요?",
+	"forgotPassword": "비밀번호를 잊어버리셨나요?",
+	"forgotPasswordHelpText": "로그인 페이지에 자격 증명을 잊어버렸을 때 클릭할 수 있는 링크를 표시합니다.",
+	"rememberMe": "나를 기억해",
+	"rememberMeHelpText": "로그인 페이지에 확인란을 표시하여 세션이 만료될 때까지 브라우저를 다시 시작하는 동안 사용자가 로그인 상태를 유지할 수 있도록 합니다.",
+	"emailSettings": "이메일 설정",
+	"registrationEmailAsUsername": "이메일을 사용자 이름으로",
+	"emailAsUsernameHelpText": "사용자가 이메일을 사용자 이름으로 설정하도록 허용합니다.",
+	"loginWithEmailAllowed": "이메일로 로그인",
+	"loginWithEmailHelpText": "사용자가 자신의 이메일 주소로 로그인할 수 있도록 허용합니다.",
+	"duplicateEmailsAllowed": "중복 이메일",
+	"duplicateEmailsHelpText": "여러 사용자가 동일한 이메일 주소를 가질 수 있도록 허용합니다.이 설정을 변경하면 사용자의 캐시도 지워집니다.중복 이메일 주소에 대한 지원을 해제한 후에는 데이터베이스에서 기존 사용자의 이메일 제약 조건을 수동으로 업데이트하는 것이 좋습니다.",
+	"verifyEmail": "이메일 확인",
+	"verifyEmailHelpText": "최초 로그인 후 또는 주소 변경 제출 후 사용자가 이메일 주소를 확인하도록 요구합니다.",
+	"userInfoSettings": "사용자 정보 설정",
+	"editUsernameAllowed": "사용자 이름 편집",
+	"enableSwitchSuccess": "{{switch}} 을 (를) 성공적으로 변경했습니다.",
+	"enableSwitchError": "{{error}} 때문에 활성화/비활성화할 수 없습니다.",
+	"testingConnection": "연결 테스트",
+	"testConnectionHint": {
+		"withEmail": "연결을 테스트할 때 현재 사용자 ({{email}}) 에게 이메일이 전송됩니다.",
+		"withoutEmail": "연결을 테스트하려면 먼저 현재 사용자 ({{UserName}}) 의 e-메일 주소를 구성해야 합니다.",
+		"withoutEmailAction": "e-메일 주소 구성"
+	},
+	"testConnectionSuccess": "성공!SMTP 연결에 성공했습니다.이메일이 전송되었습니다!",
+	"testConnectionError": "오류!{{오류}}",
+	"realmId": "영역 ID",
+	"displayName": "디스플레이 이름",
+	"htmlDisplayName": "HTML 디스플레이 이름",
+	"frontendUrl": "프런트엔드 URL",
+	"requireSsl": "SSL 필요",
+	"sslType": {
+		"all": "모든 요청",
+		"external": "외부 요청",
+		"none": "없음"
+	},
+	"selectATheme": "테마 선택",
+	"placeholderText": "하나 선택",
+	"userManagedAccess": "사용자 관리 액세스",
+	"userProfileEnabled": "사용자 프로필 활성화",
+	"endpoints": "엔드포인트",
+	"openIDEndpointConfiguration": "오픈ID 엔드포인트 구성",
+	"samlIdentityProviderMetadata": "SAML 2.0 ID 제공자 메타데이터",
+	"loginTheme": "로그인 테마",
+	"accountTheme": "계정 테마",
+	"adminTheme": "관리자 UI 테마",
+	"emailTheme": "이메일 테마",
+	"internationalization": "국제화",
+	"localization": "로컬라이제이션",
+	"sessions": "세션",
+	"SSOSessionSettings": "SSO 세션 설정",
+	"SSOSessionIdle": "SSO 세션 유휴",
+	"SSOSessionMax": "SSO 세션 최대",
+	"SSOSessionIdleRememberMe": "SSO 세션 유휴 상태 기억하기",
+	"SSOSessionMaxRememberMe": "SSO 세션 맥스 리멤버 미",
+	"clientSessionSettings": "클라이언트 세션 설정",
+	"clientSessionIdle": "클라이언트 세션 유휴",
+	"clientSessionMax": "클라이언트 세션 최대",
+	"offlineSessionSettings": "오프라인 세션 설정",
+	"offlineSessionIdle": "오프라인 세션 유휴",
+	"offlineSessionMaxLimited": "오프라인 세션 최대 제한",
+	"offlineSessionMax": "오프라인 세션 최대",
+	"loginSettings": "로그인 설정",
+	"loginTimeout": "로그인 타임아웃",
+	"loginActionTimeout": "로그인 작업 타임아웃",
+	"refreshTokens": "리프레시 토큰",
+	"accessTokens": "액세스 토큰",
+	"actionTokens": "액션 토큰",
+	"overrideActionTokens": "오버라이드 액션 토큰",
+	"defaultSigAlg": "기본 서명 알고리즘",
+	"revokeRefreshToken": "새로고침 토큰 취소",
+	"refreshTokenMaxReuse": "리프레쉬 토큰 맥스 재사용",
+	"accessTokenLifespan": "액세스 토큰 수명",
+	"accessTokenLifespanImplicitFlow": "암시적 흐름을 위한 액세스 토큰 수명",
+	"clientLoginTimeout": "클라이언트 로그인 타임아웃",
+	"userInitiatedActionLifespan": "사용자 시작 동작 수명",
+	"defaultAdminInitiated": "관리자가 주도하는 작업의 기본 수명",
+	"oAuthDeviceCodeLifespan": "OAuth 2.0 기기 코드 수명",
+	"oAuthDevicePollingInterval": "OAuth 2.0 기기 폴링 간격",
+	"shortVerificationUri": "디바이스 인증 플로우의 간단한 인증_uri",
+	"emailVerification": "이메일 인증",
+	"idpAccountEmailVerification": "IdP 계정 이메일 인증",
+	"executeActions": "액션 실행",
+	"clientPolicies": "클라이언트 정책",
+	"noClientPolicies": "클라이언트 정책 없음",
+	"noClientPoliciesInstructions": "클라이언트 정책은 없습니다.'클라이언트 정책 생성'을 선택하여 새 클라이언트 정책을 생성합니다.",
+	"createPolicy": "클라이언트 정책 생성",
+	"createClientPolicy": "클라이언트 정책 생성",
+	"createClientPolicySuccess": "새 정책 생성됨",
+	"updateClientPolicySuccess": "클라이언트 정책 업데이트",
+	"createClientPolicyError": "{{error}} 때문에 정책을 생성할 수 없습니다.",
+	"createClientConditionSuccess": "조건이 성공적으로 생성되었습니다.",
+	"createClientConditionError": "조건을 만드는 중 오류 발생: {{error}}",
+	"updateClientConditionSuccess": "상태가 성공적으로 업데이트되었습니다.",
+	"deleteClientConditionSuccess": "조건이 성공적으로 삭제되었습니다.",
+	"deleteClientConditionError": "조건을 만드는 중 오류 발생: {{error}}",
+	"clientPolicySearch": "클라이언트 정책 검색",
+	"policiesConfigType": "다음을 통해 구성하십시오.",
+	"policiesConfigTypes": {
+		"formView": "양식 보기",
+		"jsonEditor": "JSON 에디터"
+	},
+	"deleteClientPolicy": "클라이언트 정책 삭제",
+	"deleteClientPolicyConfirmTitle": "정책을 삭제하시겠습니까?",
+	"deleteClientPolicyConfirm": "이 작업을 수행하면 {{policyName}} 정책이 영구적으로 삭제됩니다.이 작업은 취소할 수 없습니다.",
+	"deleteClientPolicySuccess": "클라이언트 정책 삭제됨",
+	"deleteClientPolicyError": "정책을 삭제할 수 없습니다: {{error}}",
+	"profiles": "프로필",
+	"policies": "정책",
+	"clientPoliciesProfilesHelpText": "클라이언트 프로필을 사용하면 클라이언트에서 수행되는 다양한 작업에 적용되는 실행기 세트를 설정할 수 있습니다.작업은 클라이언트 생성 또는 업데이트와 같은 관리자 작업이거나 클라이언트에 대한 인증과 같은 사용자 작업일 수 있습니다.",
+	"clientPoliciesProfiles": "클라이언트 정책 프로필",
+	"clientPoliciesPoliciesHelpText": "클라이언트 정책을 사용하면 클라이언트 프로필을 다양한 조건과 바인딩하여 특정 클라이언트 프로필의 실행자가 지정한 동작을 정확히 언제 적용할지 지정할 수 있습니다.",
+	"clientPoliciesPolicies": "클라이언트 정책 정책",
+	"clientPoliciesTab": "클라이언트 정책 탭",
+	"clientProfilesSubTab": "클라이언트 프로파일 하위 탭",
+	"clientPoliciesSubTab": "클라이언트 정책 하위 탭",
+	"profilesConfigType": "다음을 통해 구성하십시오.",
+	"profilesConfigTypes": {
+		"formView": "양식 보기",
+		"jsonEditor": "JSON 에디터"
+	},
+	"clientProfileSearch": "검색",
+	"searchProfile": "검색 프로필",
+	"clientProfileName": "클라이언트 프로필 이름",
+	"clientProfileDescription": "설명",
+	"emptyClientProfiles": "프로필 없음",
+	"emptyClientProfilesInstructions": "프로필이 없습니다. 새 클라이언트 프로필을 만들려면 '고객 프로필 만들기'를 선택하십시오.",
+	"deleteClientProfileConfirmTitle": "프로필을 삭제하시겠습니까?",
+	"deleteClientProfileConfirm": "이 작업을 수행하면 {{ProfileName}} 프로필이 영구적으로 삭제됩니다.이 작업은 취소할 수 없습니다.",
+	"deleteClientSuccess": "고객 프로필 삭제됨",
+	"deleteClientError": "프로필을 삭제할 수 없습니다: {{error}}",
+	"deleteClientPolicyProfileConfirmTitle": "프로필을 삭제하시겠습니까?",
+	"deleteClientPolicyProfileConfirm": "이 작업을 수행하면 {{policyName}} 정책에서 {{ProfileName}} 이 영구적으로 삭제됩니다.이 작업은 취소할 수 없습니다.",
+	"deleteClientPolicyProfileSuccess": "프로필이 정책에서 성공적으로 제거되었습니다.",
+	"deleteClientPolicyProfileError": "정책에서 프로필을 삭제할 수 없습니다: {{error}}",
+	"createClientProfile": "클라이언트 프로필 생성",
+	"deleteClientProfile": "이 클라이언트 프로필 삭제",
+	"createClientProfileSuccess": "새 클라이언트 프로필 생성됨",
+	"updateClientProfileSuccess": "클라이언트 프로필이 성공적으로 업데이트되었습니다.",
+	"createClientProfileError": "클라이언트 프로파일을 생성할 수 없습니다: '{{error}}'",
+	"addClientProfileSuccess": "새 고객 프로필 추가됨",
+	"addClientProfileError": "클라이언트 프로파일을 생성할 수 없습니다: '{{error}}'",
+	"createClientProfileNameHelperText": "이름은 영역 내에서 고유해야 합니다.",
+	"newClientProfile": "클라이언트 프로필 생성",
+	"newClientProfileName": "클라이언트 프로필 이름",
+	"clientProfile": "고객 프로필 세부 정보",
+	"executorDetails": "실행자 세부 정보",
+	"back": "뒤로",
+	"delete": "지우다",
+	"save": "저장",
+	"reload": "새로 고침",
+	"global": "글로벌",
+	"description": "기술",
+	"executors": "집행자",
+	"executorsHelpText": "실행자 (이 클라이언트 프로파일에 적용될 예정)",
+	"executorsHelpItem": "실행자 도움말 항목",
+	"addExecutor": "실행자 추가",
+	"executorType": "실행자 유형",
+	"executorTypeSwitchHelpText": "실행기 유형 스위치 도움말 텍스트",
+	"executorTypeSelectHelpText": "실행기 유형 선택 도움말 텍스트",
+	"executorTypeSelectAlgorithm": "실행기 유형 선택 알고리즘",
+	"executorTypeTextHelpText": "실행기 유형 텍스트 도움말 텍스트",
+	"executorAuthenticatorMultiSelectHelpText": "Executor Authenticator 멀티셀렉트 도움말 텍스트",
+	"executorClientAuthenticator": "실행자 클라이언트 인증자",
+	"executorsTable": "실행자 테이블",
+	"executorName": "이름",
+	"emptyExecutors": "실행자가 구성되지 않았습니다.",
+	"addExecutorSuccess": "성공!실행기가 성공적으로 생성되었습니다.",
+	"addExecutorError": "실행자가 생성되지 않음",
+	"updateExecutorSuccess": "실행기가 성공적으로 업데이트되었습니다.",
+	"updateExecutorError": "실행기가 업데이트되지 않음",
+	"deleteExecutorProfileConfirmTitle": "실행기를 삭제하시겠습니까?",
+	"deleteExecutorProfileConfirm": "이 작업을 수행하면 {{ExecutorName}} 이 영구적으로 삭제됩니다.이 작업은 취소할 수 없습니다.",
+	"deleteExecutorSuccess": "성공!실행자가 삭제되었습니다.",
+	"deleteExecutorError": "실행기를 삭제할 수 없습니다: {{error}}",
+	"updateClientProfilesSuccess": "클라이언트 프로파일 구성이 업데이트되었습니다.",
+	"updateClientProfilesError": "제공된 JSON이 올바르지 않습니다. JSON에 예기치 않은 {토큰이 있습니다.",
+	"deleteClientPolicyConditionConfirmTitle": "조건 삭제?",
+	"deleteClientPolicyConditionConfirm": "이 작업을 수행하면 {{condition}} 이 영구적으로 삭제됩니다.이 작업은 취소할 수 없습니다.",
+	"selectACondition": "조건 선택",
+	"conditions": "조건",
+	"conditionType": "조건 유형",
+	"policyDetails": "정책 세부 정보",
+	"anyClient": "어떤 경우에도 모든 고객이 조건을 충족합니다.",
+	"clientAccesstype": "클라이언트 액세스 유형",
+	"clientRoles": "클라이언트 역할",
+	"clientScopesCondition": "예상 범위",
+	"updateClientContext": "클라이언트 컨텍스트 업데이트",
+	"clientUpdaterSourceGroups": "그룹",
+	"clientUpdaterTrustedHosts": "신뢰할 수 있는 호스트",
+	"clientUpdaterSourceRoles": "개체 역할 업데이트",
+	"conditionsHelpItem": "조건 도움말 항목",
+	"addCondition": "조건 추가",
+	"editCondition": "조건 편집",
+	"emptyConditions": "조건이 구성되지 않았습니다.",
+	"updateClientPoliciesSuccess": "클라이언트 정책 구성이 업데이트되었습니다.",
+	"updateClientPoliciesError": "제공된 JSON이 올바르지 않습니다. JSON에 예기치 않은 {토큰이 있습니다.",
+	"clientProfiles": "고객 프로필",
+	"clientProfilesHelpItem": "고객 프로필 도움말 항목",
+	"addClientProfile": "클라이언트 프로필 추가",
+	"emptyProfiles": "클라이언트 프로파일이 구성되지 않았습니다.",
+	"tokens": "토큰",
+	"userProfile": "사용자 프로필",
+	"jsonEditor": "JSON 에디터",
+	"attributes": "특성",
+	"attributesGroup": "속성 그룹",
+	"invalidJsonError": "사용자 프로필을 저장할 수 없습니다. 제공된 정보는 유효한 JSON이 아닙니다.",
+	"userProfileSuccess": "사용자 프로필 설정이 성공적으로 업데이트되었습니다.",
+	"userProfileError": "사용자 프로필 설정을 업데이트할 수 없습니다: {{error}}",
+	"status": "상태",
+	"recommendedSsoTimeout": "이 값은 SSO 세션 유휴 제한 시간 {{time}} 보다 짧게 설정하는 것이 좋습니다.",
+	"supportedLocales": "지원되는 로케일",
+	"defaultLocale": "기본 로케일",
+	"selectLocales": "로케일 선택",
+	"searchForMessageBundle": "메시지 번들 검색",
+	"addMessageBundle": "메시지 번들 추가",
+	"addMessageBundleSuccess": "성공!메시지 번들이 추가되었습니다.",
+	"deleteMessageBundleSuccess": "번들에서 메시지를 성공적으로 제거했습니다.",
+	"deleteMessageBundleError": "번들에서 메시지를 제거하는 중 오류가 발생했습니다. {{error}}",
+	"rowEditBtnAriaLabel": "{{메시지 번들}} 편집",
+	"rowSaveBtnAriaLabel": "{{메시지 번들}} 에 대한 편집 내용 저장",
+	"rowCancelBtnAriaLabel": "{{메시지 번들}} 에 대한 편집 취소",
+	"updateMessageBundleSuccess": "성공!메시지 번들이 업데이트되었습니다.",
+	"updateMessageBundleError": "메시지 번들을 업데이트하는 중 오류가 발생했습니다.",
+	"addMessageBundleError": "메시지 번들을 만드는 중 오류가 발생했습니다. {{error}}",
+	"allGroups": "모든 그룹",
+	"attributeName": "이름",
+	"attributeDisplayName": "디스플레이 이름",
+	"attributeGroup": "속성 그룹",
+	"enabledWhen": "활성화 시기",
+	"required": "필수",
+	"requiredFor": "필수 대상",
+	"requiredWhen": "필요한 경우",
+	"requiredForLabel": {
+		"both": "사용자와 관리자 모두",
+		"users": "사용자만",
+		"admins": "관리자만"
+	},
+	"whoCanEdit": "누가 편집할 수 있나요?",
+	"whoCanView": "누가 볼 수 있나요?",
+	"user": "사용자",
+	"admin": "관리자",
+	"addValidator": "유효성 검사기 추가",
+	"validatorType": "유효성 검사기 유형",
+	"addValidatorRole": "{{ValidatorName}} 검사기 추가",
+	"validatorDialogColNames": {
+		"colName": "역할 이름",
+		"colDescription": "설명"
+	},
+	"validatorColNames": {
+		"colName": "유효성 검사기 이름",
+		"colConfig": "구성"
+	},
+	"deleteValidatorConfirmTitle": "유효성 검사기를 삭제하시겠습니까?",
+	"deleteValidatorConfirmMsg": "정말 {{validatorName}} 검사기를 영구적으로 삭제하시겠습니까?",
+	"validatorDeletedSuccess": "성공!사용자 프로필 구성이 저장되었습니다.",
+	"validatorDeletedError": "사용자 프로필을 저장하는 중 오류: {{error}}",
+	"emptyValidators": "검증자가 없습니다.",
+	"updatedUserProfileSuccess": "사용자 프로필 구성이 저장되었습니다.",
+	"updatedUserProfileError": "사용자 프로필 구성이 저장되지 않았습니다.",
+	"createAttribute": "속성 생성",
+	"editAttribute": "속성 편집",
+	"createAttributeSubTitle": "새 속성 만들기",
+	"createAttributeSuccess": "성공!사용자 프로필 구성이 저장되었습니다.",
+	"createAttributeError": "오류!사용자 프로필 구성이 저장되지 않았습니다 {{error}}.",
+	"attributesDropdown": "속성 드롭다운",
+	"deleteAttributeConfirmTitle": "속성 삭제?",
+	"deleteAttributeConfirm": "정말 {{AttributeName}} 속성을 영구적으로 삭제하시겠습니까?",
+	"deleteAttributeSuccess": "속성 삭제됨",
+	"deleteAttributeError": "속성이 삭제되지 않음",
+	"always": "항상",
+	"scopesAsRequested": "범위가 요청되었습니다.",
+	"generalSettings": "일반 설정",
+	"permission": "허가",
+	"validations": "유효성 검사",
+	"annotations": "주석",
+	"addAnnotationText": "주석 추가",
+	"validateName": "이름이 없는 속성 구성은 허용되지 않습니다.",
+	"eventType": "이벤트 저장 유형",
+	"searchEventType": "저장된 이벤트 유형 검색",
+	"addSavedTypes": "저장된 유형 추가",
+	"addTypes": "유형 추가",
+	"eventTypes": {
+		"SEND_RESET_PASSWORD": {
+			"name": "재설정 비밀번호 보내기",
+			"description": "재설정 비밀번호 보내기"
+		},
+		"UPDATE_CONSENT_ERROR": {
+			"name": "업데이트 동의 오류",
+			"description": "업데이트 동의 오류"
+		},
+		"GRANT_CONSENT": {
+			"name": "동의 부여",
+			"description": "동의 부여"
+		},
+		"REMOVE_TOTP": {
+			"name": "상단 제거",
+			"description": "상단 제거"
+		},
+		"REVOKE_GRANT": {
+			"name": "보조금 취소",
+			"description": "보조금 취소"
+		},
+		"UPDATE_TOTP": {
+			"name": "최상위 업데이트",
+			"description": "최상위 업데이트"
+		},
+		"LOGIN_ERROR": {
+			"name": "로그인 오류",
+			"description": "로그인 오류"
+		},
+		"CLIENT_LOGIN": {
+			"name": "클라이언트 로그인",
+			"description": "클라이언트 로그인"
+		},
+		"RESET_PASSWORD_ERROR": {
+			"name": "비밀번호 재설정 오류",
+			"description": "비밀번호 재설정 오류"
+		},
+		"IMPERSONATE_ERROR": {
+			"name": "사칭 오류",
+			"description": "사칭 오류"
+		},
+		"CODE_TO_TOKEN_ERROR": {
+			"name": "코드 투 토큰 오류",
+			"description": "코드 투 토큰 오류"
+		},
+		"CUSTOM_REQUIRED_ACTION": {
+			"name": "사용자 지정 필수 조치",
+			"description": "사용자 지정 필수 조치"
+		},
+		"RESTART_AUTHENTICATION": {
+			"name": "인증 재시작",
+			"description": "인증 재시작"
+		},
+		"IMPERSONATE": {
+			"name": "가장하다",
+			"description": "가장하다"
+		},
+		"UPDATE_PROFILE_ERROR": {
+			"name": "프로필 업데이트 오류",
+			"description": "프로필 업데이트 오류"
+		},
+		"LOGIN": {
+			"name": "로그인",
+			"description": "로그인"
+		},
+		"UPDATE_PASSWORD_ERROR": {
+			"name": "비밀번호 업데이트 오류",
+			"description": "비밀번호 업데이트 오류"
+		},
+		"CLIENT_INITIATED_ACCOUNT_LINKING": {
+			"name": "클라이언트가 시작한 계정 연결",
+			"description": "클라이언트가 시작한 계정 연결"
+		},
+		"TOKEN_EXCHANGE": {
+			"name": "토큰 교환",
+			"description": "토큰 교환"
+		},
+		"LOGOUT": {
+			"name": "로그아웃",
+			"description": "로그아웃"
+		},
+		"REGISTER": {
+			"name": "레지스터",
+			"description": "레지스터"
+		},
+		"DELETE_ACCOUNT_ERROR": {
+			"name": "계정 삭제 오류",
+			"description": "계정 삭제 오류"
+		},
+		"CLIENT_REGISTER": {
+			"name": "클라이언트 등록",
+			"description": "클라이언트 등록"
+		},
+		"IDENTITY_PROVIDER_LINK_ACCOUNT": {
+			"name": "ID 제공자 링크 계정",
+			"description": "ID 제공자 링크 계정"
+		},
+		"DELETE_ACCOUNT": {
+			"name": "계정 삭제",
+			"description": "계정 삭제"
+		},
+		"UPDATE_PASSWORD": {
+			"name": "비밀번호 업데이트",
+			"description": "비밀번호 업데이트"
+		},
+		"CLIENT_DELETE": {
+			"name": "클라이언트 삭제",
+			"description": "클라이언트 삭제"
+		},
+		"FEDERATED_IDENTITY_LINK_ERROR": {
+			"name": "페더레이션 ID 링크 오류",
+			"description": "페더레이션 ID 링크 오류"
+		},
+		"IDENTITY_PROVIDER_FIRST_LOGIN": {
+			"name": "ID 제공업체 최초 로그인",
+			"description": "ID 제공업체 최초 로그인"
+		},
+		"CLIENT_DELETE_ERROR": {
+			"name": "클라이언트 삭제 오류",
+			"description": "클라이언트 삭제 오류"
+		},
+		"VERIFY_EMAIL": {
+			"name": "이메일 확인",
+			"description": "이메일 확인"
+		},
+		"CLIENT_LOGIN_ERROR": {
+			"name": "클라이언트 로그인 오류",
+			"description": "클라이언트 로그인 오류"
+		},
+		"RESTART_AUTHENTICATION_ERROR": {
+			"name": "인증 재시작 오류",
+			"description": "인증 재시작 오류"
+		},
+		"EXECUTE_ACTIONS": {
+			"name": "액션 실행",
+			"description": "액션 실행"
+		},
+		"REMOVE_FEDERATED_IDENTITY_ERROR": {
+			"name": "페더레이션 ID 오류 제거",
+			"description": "페더레이션 ID 오류 제거"
+		},
+		"TOKEN_EXCHANGE_ERROR": {
+			"name": "토큰 교환 오류",
+			"description": "토큰 교환 오류"
+		},
+		"PERMISSION_TOKEN": {
+			"name": "권한 토큰",
+			"description": "권한 토큰"
+		},
+		"SEND_IDENTITY_PROVIDER_LINK_ERROR": {
+			"name": "ID 제공자 링크 전송 오류",
+			"description": "ID 제공자 링크 전송 오류"
+		},
+		"EXECUTE_ACTION_TOKEN_ERROR": {
+			"name": "액션 토큰 실행 오류",
+			"description": "액션 토큰 실행 오류"
+		},
+		"SEND_VERIFY_EMAIL": {
+			"name": "인증 이메일 보내기",
+			"description": "인증 이메일 보내기"
+		},
+		"EXECUTE_ACTIONS_ERROR": {
+			"name": "작업 실행 오류",
+			"description": "작업 실행 오류"
+		},
+		"REMOVE_FEDERATED_IDENTITY": {
+			"name": "페더레이션 ID 제거",
+			"description": "페더레이션 ID 제거"
+		},
+		"IDENTITY_PROVIDER_POST_LOGIN": {
+			"name": "ID 제공자 포스트 로그인",
+			"description": "ID 제공자 포스트 로그인"
+		},
+		"IDENTITY_PROVIDER_LINK_ACCOUNT_ERROR": {
+			"name": "ID 제공자 연결 계정 오류",
+			"description": "ID 제공자 연결 계정 오류"
+		},
+		"UPDATE_EMAIL": {
+			"name": "이메일 업데이트",
+			"description": "이메일 업데이트"
+		},
+		"REGISTER_ERROR": {
+			"name": "등록 오류",
+			"description": "등록 오류"
+		},
+		"REVOKE_GRANT_ERROR": {
+			"name": "권한 취소 오류",
+			"description": "권한 취소 오류"
+		},
+		"EXECUTE_ACTION_TOKEN": {
+			"name": "액션 토큰 실행",
+			"description": "액션 토큰 실행"
+		},
+		"LOGOUT_ERROR": {
+			"name": "로그아웃 오류",
+			"description": "로그아웃 오류"
+		},
+		"UPDATE_EMAIL_ERROR": {
+			"name": "이메일 업데이트 오류",
+			"description": "이메일 업데이트 오류"
+		},
+		"CLIENT_UPDATE_ERROR": {
+			"name": "클라이언트 업데이트 오류",
+			"description": "클라이언트 업데이트 오류"
+		},
+		"UPDATE_PROFILE": {
+			"name": "프로필 업데이트",
+			"description": "프로필 업데이트"
+		},
+		"CLIENT_REGISTER_ERROR": {
+			"name": "클라이언트 등록 오류",
+			"description": "클라이언트 등록 오류"
+		},
+		"FEDERATED_IDENTITY_LINK": {
+			"name": "페더레이션된 ID 링크",
+			"description": "페더레이션된 ID 링크"
+		},
+		"SEND_IDENTITY_PROVIDER_LINK": {
+			"name": "ID 제공자 링크 전송",
+			"description": "ID 제공자 링크 전송"
+		},
+		"SEND_VERIFY_EMAIL_ERROR": {
+			"name": "확인 이메일 전송 오류",
+			"description": "확인 이메일 전송 오류"
+		},
+		"RESET_PASSWORD": {
+			"name": "비밀번호 재설정",
+			"description": "비밀번호 재설정"
+		},
+		"CLIENT_INITIATED_ACCOUNT_LINKING_ERROR": {
+			"name": "클라이언트 개시 계정 연결 오류",
+			"description": "클라이언트 개시 계정 연결 오류"
+		},
+		"UPDATE_CONSENT": {
+			"name": "동의 업데이트",
+			"description": "동의 업데이트"
+		},
+		"REMOVE_TOTP_ERROR": {
+			"name": "최상위 오류 제거",
+			"description": "최상위 오류 제거"
+		},
+		"VERIFY_EMAIL_ERROR": {
+			"name": "이메일 오류 확인",
+			"description": "이메일 오류 확인"
+		},
+		"SEND_RESET_PASSWORD_ERROR": {
+			"name": "비밀번호 재설정 전송 오류",
+			"description": "비밀번호 재설정 전송 오류"
+		},
+		"CLIENT_UPDATE": {
+			"name": "클라이언트 업데이트",
+			"description": "클라이언트 업데이트"
+		},
+		"CUSTOM_REQUIRED_ACTION_ERROR": {
+			"name": "사용자 지정 필수 조치 오류",
+			"description": "사용자 지정 필수 조치 오류"
+		},
+		"IDENTITY_PROVIDER_POST_LOGIN_ERROR": {
+			"name": "ID 제공업체 게시물 로그인 오류",
+			"description": "ID 제공업체 게시물 로그인 오류"
+		},
+		"UPDATE_TOTP_ERROR": {
+			"name": "업데이트 토프 오류",
+			"description": "업데이트 토프 오류"
+		},
+		"CODE_TO_TOKEN": {
+			"name": "코드를 토큰으로",
+			"description": "코드를 토큰으로"
+		},
+		"GRANT_CONSENT_ERROR": {
+			"name": "승인 동의 오류",
+			"description": "승인 동의 오류"
+		},
+		"IDENTITY_PROVIDER_FIRST_LOGIN_ERROR": {
+			"name": "ID 제공업체 첫 로그인 오류",
+			"description": "ID 제공업체 첫 로그인 오류"
+		},
+		"REGISTER_NODE_ERROR": {
+			"name": "등록 노드 오류",
+			"description": "등록 노드 오류"
+		},
+		"PERMISSION_TOKEN_ERROR": {
+			"name": "권한 토큰 오류",
+			"description": "권한 토큰 오류"
+		},
+		"IDENTITY_PROVIDER_RETRIEVE_TOKEN_ERROR": {
+			"name": "ID 제공자 토큰 검색 오류",
+			"description": "ID 제공자 토큰 검색 오류"
+		},
+		"CLIENT_INFO": {
+			"name": "고객 정보",
+			"description": "고객 정보"
+		},
+		"VALIDATE_ACCESS_TOKEN": {
+			"name": "액세스 토큰 확인",
+			"description": "액세스 토큰 확인"
+		},
+		"IDENTITY_PROVIDER_LOGIN": {
+			"name": "ID 제공자 로그인",
+			"description": "ID 제공자 로그인"
+		},
+		"CLIENT_INFO_ERROR": {
+			"name": "클라이언트 정보 오류",
+			"description": "클라이언트 정보 오류"
+		},
+		"INTROSPECT_TOKEN_ERROR": {
+			"name": "인트로스펙트 토큰 오류",
+			"description": "인트로스펙트 토큰 오류"
+		},
+		"INTROSPECT_TOKEN": {
+			"name": "인트로스펙트 토큰",
+			"description": "인트로스펙트 토큰"
+		},
+		"UNREGISTER_NODE": {
+			"name": "노드 등록 취소",
+			"description": "노드 등록 취소"
+		},
+		"REGISTER_NODE": {
+			"name": "레지스터 노드",
+			"description": "레지스터 노드"
+		},
+		"INVALID_SIGNATURE": {
+			"name": "잘못된 서명",
+			"description": "잘못된 서명"
+		},
+		"USER_INFO_REQUEST_ERROR": {
+			"name": "사용자 정보 요청 오류",
+			"description": "사용자 정보 요청 오류"
+		},
+		"REFRESH_TOKEN": {
+			"name": "리프레시 토큰",
+			"description": "리프레시 토큰"
+		},
+		"IDENTITY_PROVIDER_RESPONSE": {
+			"name": "ID 제공업체 응답",
+			"description": "ID 제공업체 응답"
+		},
+		"IDENTITY_PROVIDER_RETRIEVE_TOKEN": {
+			"name": "ID 제공자 검색 토큰",
+			"description": "ID 제공자 검색 토큰"
+		},
+		"UNREGISTER_NODE_ERROR": {
+			"name": "노드 등록 취소 오류",
+			"description": "노드 등록 취소 오류"
+		},
+		"VALIDATE_ACCESS_TOKEN_ERROR": {
+			"name": "액세스 토큰 확인 오류",
+			"description": "액세스 토큰 확인 오류"
+		},
+		"INVALID_SIGNATURE_ERROR": {
+			"name": "잘못된 서명 오류",
+			"description": "잘못된 서명 오류"
+		},
+		"USER_INFO_REQUEST": {
+			"name": "사용자 정보 요청",
+			"description": "사용자 정보 요청"
+		},
+		"IDENTITY_PROVIDER_RESPONSE_ERROR": {
+			"name": "ID 제공자 응답 오류",
+			"description": "ID 제공자 응답 오류"
+		},
+		"IDENTITY_PROVIDER_LOGIN_ERROR": {
+			"name": "ID 제공자 로그인 오류",
+			"description": "ID 제공자 로그인 오류"
+		},
+		"REFRESH_TOKEN_ERROR": {
+			"name": "토큰 새로 고침 오류",
+			"description": "토큰 새로 고침 오류"
+		},
+		"VERIFY_PROFILE": {
+			"name": "프로필 확인",
+			"description": "프로필 확인"
+		},
+		"VERIFY_PROFILE_ERROR": {
+			"name": "프로필 확인 오류",
+			"description": "프로필 확인 오류"
+		},
+		"OAUTH2_DEVICE_CODE_TO_TOKEN": {
+			"name": "Oauth2 디바이스 코드를 토큰으로",
+			"description": "Oauth2 디바이스 코드를 토큰으로"
+		},
+		"OAUTH2_DEVICE_CODE_TO_TOKEN_ERROR": {
+			"name": "Oauth2 디바이스 코드를 토큰으로 보내는 중 오류가 발생했습니다.",
+			"description": "Oauth2 디바이스 코드를 토큰으로 보내는 중 오류가 발생했습니다."
+		},
+		"OAUTH2_DEVICE_VERIFY_USER_CODE": {
+			"name": "Oauth2 장치 사용자 코드 확인",
+			"description": "Oauth2 장치 사용자 코드 확인"
+		},
+		"OAUTH2_DEVICE_VERIFY_USER_CODE_ERROR": {
+			"name": "Oauth2 장치 사용자 코드 확인 오류",
+			"description": "Oauth2 장치 사용자 코드 확인 오류"
+		},
+		"AUTHREQID_TO_TOKEN": {
+			"name": "토큰에 대한 인증",
+			"description": "토큰에 대한 인증"
+		},
+		"AUTHREQID_TO_TOKEN_ERROR": {
+			"name": "토큰에 대한 인증 오류",
+			"description": "토큰에 대한 인증 오류"
+		},
+		"OAUTH2_DEVICE_AUTH": {
+			"name": "Oauth2 디바이스 인증",
+			"description": "Oauth2 디바이스 인증"
+		},
+		"OAUTH2_DEVICE_AUTH_ERROR": {
+			"name": "Oauth2 디바이스 인증 오류",
+			"description": "Oauth2 디바이스 인증 오류"
+		}
+	},
+	"emptyEvents": "추가할 내용 없음",
+	"emptyEventsInstructions": "추가할 이벤트 유형이 더 이상 없습니다.",
+	"eventConfigSuccessfully": "구성을 성공적으로 저장했습니다.",
+	"eventConfigError": "이벤트 구성을 저장할 수 없습니다 {{error}}",
+	"deleteEvents": "이벤트 지우기",
+	"deleteEventsConfirm": "이 영역의 모든 이벤트를 지우면 데이터베이스의 모든 레코드가 영구적으로 지워집니다.",
+	"admin-events-cleared": "관리자 이벤트가 삭제되었습니다.",
+	"admin-events-cleared-error": "관리자 이벤트 {{error}} 을 (를) 지울 수 없습니다.",
+	"user-events-cleared": "사용자 이벤트가 삭제되었습니다.",
+	"user-events-cleared-error": "사용자 이벤트 {{error}} 을 (를) 지울 수 없습니다.",
+	"events-disable-title": "이벤트 저장 안 함?",
+	"events-disable-confirm": "“이벤트 저장”을 비활성화하면 후속 이벤트가 “이벤트” 메뉴에 표시되지 않습니다.",
+	"confirm": "확인하기",
+	"noMessageBundles": "메시지 번들 없음",
+	"noMessageBundlesInstructions": "시작하려면 메시지 번들을 추가하세요.",
+	"messageBundleDescription": "지원되는 로케일을 편집할 수 있습니다.지원되는 로케일을 아직 선택하지 않은 경우 영어 로케일만 편집할 수 있습니다.",
+	"defaultRoles": "기본 역할",
+	"defaultGroups": "기본 그룹",
+	"whatIsDefaultGroups": "디폴트 그룹의 기능은 무엇입니까?",
+	"searchForGroups": "검색 그룹",
+	"addDefaultGroups": "기본 그룹 추가",
+	"removeConfirmTitle_one": "그룹을 삭제하시겠습니까?",
+	"removeConfirmTitle_other": "그룹을 제거하시겠습니까?",
+	"removeConfirm_one": "정말 이 그룹을 제거하시겠습니까?",
+	"removeConfirm_other": "정말 이 그룹을 제거하시겠습니까?",
+	"groupRemove_one": "그룹 제거됨",
+	"groupRemove_other": "그룹이 제거됨",
+	"groupRemoveError": "그룹 {error} 을 (를) 제거하는 중 오류가 발생했습니다.",
+	"defaultGroupAdded_one": "새 그룹이 기본 그룹에 추가됨",
+	"defaultGroupAdded_other": "기본 그룹에 {{count}} 그룹을 추가했습니다.",
+	"defaultGroupAddedError": "기본 그룹 {error} 에 그룹을 추가하는 중 오류가 발생했습니다.",
+	"noDefaultGroups": "기본 그룹 없음",
+	"noDefaultGroupsInstructions": "기본 그룹을 사용하면 <1>ID 브로커링을</1> 통해 새 사용자를 만들거나 가져올 때마다 그룹 구성원을 자동으로 할당할 수 있습니다.시작하려면 기본 그룹 추가",
+	"addGroups": "그룹 추가",
+	"securityDefences": "보안 방어",
+	"headers": "헤더",
+	"bruteForceDetection": "무차별 대입 감지",
+	"xFrameOptions": "X-프레임 옵션",
+	"contentSecurityPolicy": "콘텐츠 보안 정책",
+	"contentSecurityPolicyReportOnly": "콘텐츠 보안 정책 보고서 전용",
+	"xContentTypeOptions": "X-콘텐츠 유형 옵션",
+	"xRobotsTag": "X-로봇 태그",
+	"xXSSProtection": "X-SS 프로텍션",
+	"strictTransportSecurity": "HTTP 엄격한 전송 보안 (HSTS)",
+	"referrerPolicy": "리퍼러 정책",
+	"failureFactor": "최대 로그인 실패",
+	"permanentLockout": "영구 잠금",
+	"waitIncrementSeconds": "대기 시간 증가",
+	"maxFailureWaitSeconds": "최대 대기 시간",
+	"maxDeltaTimeSeconds": "실패 리셋 시간",
+	"quickLoginCheckMilliSeconds": "빠른 로그인 확인 (밀리초 단위)",
+	"minimumQuickLoginWaitSeconds": "최소 빠른 로그인 대기",
+	"partialExportHeaderText": "부분 내보내기를 사용하면 영역 구성 및 기타 관련 리소스를 json 파일로 내보낼 수 있습니다.",
+	"includeGroupsAndRoles": "그룹 및 역할 포함",
+	"includeClients": "고객 포함",
+	"exportWarningTitle": "주의하여 내보내기",
+	"exportWarningDescription": "영역에 많은 수의 그룹, 역할 또는 클라이언트가 있는 경우 작업으로 인해 서버가 잠시 동안 응답하지 않을 수 있습니다.",
+	"exportSuccess": "Realm을 성공적으로 내보냈습니다.",
+	"exportFail": "영역을 내보낼 수 없습니다: '{{error}}'",
+	"partialImportHeaderText": "부분 가져오기를 사용하면 이전에 내보낸 json 파일에서 사용자, 클라이언트 및 기타 리소스를 가져올 수 있습니다.",
+	"selectRealm": "영역 선택",
+	"chooseResources": "가져오려는 리소스를 선택합니다.",
+	"selectIfResourceExists": "리소스가 이미 있는 경우 수행해야 할 작업을 지정하십시오.",
+	"import": "임포트",
+	"resourcesToImport": "가져올 리소스",
+	"importFail": "임포트 실패: {{error}}",
+	"FAIL": "임포트 실패",
+	"SKIP": "건너뛰기",
+	"OVERWRITE": "덮어쓰기",
+	"added": "추가됨",
+	"skipped": "건너뛰었습니다",
+	"overwritten": "덮어씁니다",
+	"importAdded_zero": "추가된 레코드가 없습니다.",
+	"importAdded_one": "한 개의 레코드가 추가되었습니다.",
+	"importAdded_other": "{{count}} 레코드가 추가되었습니다.",
+	"importOverwritten_zero": "기록을 덮어쓰지 않았습니다.",
+	"importOverwritten_one": "레코드 하나를 덮어썼습니다.",
+	"importOverwritten_other": "{{count}} 레코드를 덮어썼습니다.",
+	"importSkipped_zero": "건너뛰는 레코드가 없습니다.",
+	"importSkipped_one": "레코드 하나를 건너뛰었습니다.",
+	"importSkipped_other": "{{count}} 레코드를 건너뛰었습니다."
 }

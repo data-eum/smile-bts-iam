@@ -1,3 +1,12 @@
 {
-  "enabled": "Включено"
+	"uploadFile": "JSON 파일 업로드",
+	"realmName": "영역 이름",
+	"invalidRealmName": "Realm 이름에는 특수 문자를 포함할 수 없습니다.",
+	"enabled": "활성화됨",
+	"createRealm": "영역 생성",
+	"realmExplain": "영역은 일련의 사용자, 자격 증명, 역할 및 그룹을 관리합니다.사용자는 영역에 속하며 해당 영역에 로그인합니다.Realm은 서로 격리되어 있으며 해당 영역에서 제어하는 사용자만 관리하고 인증할 수 있습니다.",
+	"noRealmRoles": "영역 역할 없음",
+	"emptyStateText": "이 영역에는 영역 역할이 없습니다.시작하려면 영역 역할을 생성하세요.",
+	"saveRealmSuccess": "Realm이 성공적으로 생성되었습니다.",
+	"saveRealmError": "{{error}} 영역을 생성할 수 없습니다."
 }
