@@ -29,7 +29,7 @@
             <#if properties.logo?has_content>
             var brandImg = resourceUrl + '${properties.logo}';
             <#else>
-            var brandImg = resourceUrl + '/public/logo.svg';
+            var brandImg = resourceUrl + '/public/logo.jpg';
             </#if>
 
             <#if properties.logoUrl?has_content>
